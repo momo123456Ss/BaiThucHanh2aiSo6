@@ -9,11 +9,10 @@ public class HocVien {
         dem++;
         this.maHV = dem;
     }
-    public HocVien(int maHV, String hoTen, String ngaySinh, String sinh, double diemTrungBinh){
-        this.maHV = maHV;
+    public HocVien(String hoTen, String queQuan, String ngaySinh){
         this.hoTen = hoTen;
+        this.queQuan = queQuan;
         this.ngaySinh = ngaySinh;
-        this.diemTrungBinh = diemTrungBinh;
     }
     public String getHoTen() {
         return hoTen;
@@ -45,5 +44,8 @@ public class HocVien {
 
     public void setDiemTrungBinh(double diemTrungBinh) {
         this.diemTrungBinh = diemTrungBinh;
+    }
+    public void  hienThi(){
+        System.out.println("Mã HV : " + this.maHV + "\nTên : "+this.hoTen + "\nQue Quán: "+this.queQuan +"\nNgay Sinh: "+this.ngaySinh);
     }
 }

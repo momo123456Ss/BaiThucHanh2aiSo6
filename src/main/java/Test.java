@@ -50,12 +50,14 @@ public class Test {
         ArrayList<HocVien> hocVien = new ArrayList<HocVien>();
         try(Scanner scanner = new Scanner(f)){
             while (scanner.hasNext()){
+
                 String hoTen = scanner.nextLine();
                 String queQuan = scanner.nextLine();
                 String ngaySinh = scanner.nextLine();
-                hocVien.add(new HocVien(1,hoTen,queQuan,ngaySinh,8));
+                HocVien hocVienCreate = new HocVien(hoTen,queQuan,ngaySinh);
+                hocVien.add(hocVienCreate);
             }
         }
-        System.out.println(hocVien);
+        hocVien.forEach(fr->fr.hienThi());
     }
 }
