@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class HocVien {
     private String hoTen;
     private String ngaySinh;
@@ -11,11 +13,20 @@ public class HocVien {
         dem++;
         this.maHV = dem;
     }
+    public HocVien(String hoTen, String queQuan, String ngaySinh,double diemToan,double diemAnh,double diemVan){
+        this.hoTen = hoTen;
+        this.queQuan = queQuan;
+        this.ngaySinh = ngaySinh;
+        this.diemAnh = diemAnh;
+        this.diemToan = diemToan;
+        this.diemVan = diemVan;
+    }
     public HocVien(String hoTen, String queQuan, String ngaySinh){
         this.hoTen = hoTen;
         this.queQuan = queQuan;
         this.ngaySinh = ngaySinh;
     }
+
     public String getHoTen() {
         return hoTen;
     }
@@ -38,6 +49,9 @@ public class HocVien {
 
     public void setQueQuan(String queQuan) {
         this.queQuan = queQuan;
+    }
+    public void  hienThiDaNhapDiem(){
+        System.out.println("Mã HV : " + this.maHV + "\nTên : "+this.hoTen + "\nQue Quán: "+this.queQuan +"\nNgay Sinh: "+this.ngaySinh + "\nDiem : " + (this.diemVan+this.diemToan+this.diemAnh)/3);
     }
     public void  hienThi(){
         System.out.println("Mã HV : " + this.maHV + "\nTên : "+this.hoTen + "\nQue Quán: "+this.queQuan +"\nNgay Sinh: "+this.ngaySinh);
@@ -65,5 +79,23 @@ public class HocVien {
 
     public void setDiemVan(double diemVan) {
         this.diemVan = diemVan;
+    }
+    public double nhapDiemToan(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập điểm toán: ");
+        this.diemToan = sc.nextDouble();
+        return this.diemToan;
+    }
+    public double nhapDiemAnh(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập điểm toán: ");
+        this.diemAnh = sc.nextDouble();
+        return this.diemAnh;
+    }
+    public double nhapDiemVan(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập điểm toán: ");
+        this.diemVan = sc.nextDouble();
+        return  this.diemVan;
     }
 }
